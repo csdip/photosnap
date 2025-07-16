@@ -1,0 +1,132 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Page-All-Features Css Desktop Screen & Above
+------------------------------------- */
+.allfeatures {
+    background-color: $dark-color;
+
+    &__left {
+        @include textContainer;
+        position: relative;
+
+        &::before {
+            @include gradientBar;
+            height: 160px;
+        }
+
+        .content {
+            @include secContent;
+            width: 431px;
+            padding-left: 100px;
+            
+            h1 {
+                @include secTitle;
+            }
+            
+            p {
+                @include secPara;
+                margin-bottom: 0;
+            }
+
+        }
+
+    }
+
+    &__right {
+        @include imgContainer;
+        height: 60vh;
+        background-image: url(../img/hero-img-4.jpg);
+    }
+
+}
+
+
+
+
+
+@media (max-width:1200px) {
+    .allfeatures {
+        .content {
+            @include secContentForMediumScreen;
+            width: 396px;
+            padding-left: 60px;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+/* -------------------------------------
+    Page-All-Features Css Tablet Screens
+------------------------------------- */
+
+
+@media (max-width:960px) {
+    .allfeatures {
+        &__left {
+            @include textContainerTablet;
+
+            .content {
+
+                h1 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerTablet;
+
+            img {
+                @include secImgTablet;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/* -------------------------------------
+    Page-All-Features Css Mobile Screens
+------------------------------------- */
+
+
+@media (max-width:768px) {
+    .allfeatures {
+        @include secColumnMobile;
+
+        &__left {
+            @include textContainerMobile;
+
+            &::before {
+                top: -57px;
+                left: 80px;
+                transform: rotate(90deg);
+                height: 120px;
+            }
+
+            .content {
+                @include secContentMobile;
+
+                h1 {
+                    @include secTitleMobile;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerMobile;
+        }
+    }
+}

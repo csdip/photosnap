@@ -1,0 +1,100 @@
+@use "../utils/" as *;
+
+// =============== Global CSS ===============
+
+*,
+  *::after,
+  *::before,
+  html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+  }
+
+  body,
+  textarea,
+  input {
+      font-size: 15px;
+      line-height: 1;
+      font-family: "Roboto", sans-serif;
+  }
+
+  body {
+      background-color: $light-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-size: 34px;
+      color: $dark-color;
+      font-weight: $semibold;
+      line-height: 1.4;
+  }
+
+  ul {
+      margin: 0;
+      padding: 0;
+  }
+
+  li {
+      list-style: none;
+  }
+
+  a,
+  a:hover {
+      text-decoration: none;
+  }
+
+  p {
+      color: $grey-color;
+      font-size: 15px;
+      line-height: 1.6;
+  }
+
+  button,
+  .btn {
+      display: inline-block;
+      color: $light-color;
+      background-color: $dark-color;
+      font-weight: $regular;
+      font-size: 12px;
+      letter-spacing: 2px;
+      border-radius: 0;
+      border: none;
+      padding: 20px 30px;
+      cursor: pointer;
+      outline: none;
+      line-height: 1;
+      text-transform: uppercase;
+      transition: all 0.3s;
+  }
+
+  button:hover,
+  .btn:hover {
+      opacity: 0.9;
+  }
+
+  .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 40px;
+  }
+
+  .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+      justify-content: space-between;
+  }
+
+
+
+
+
+
+ 

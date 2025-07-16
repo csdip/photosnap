@@ -1,0 +1,115 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+
+/* -------------------------------------
+    Page-Story Css Desktop Screen & Above
+------------------------------------- */
+.stories{
+    width: 100%;
+    height: 70vh;
+    background-image: url(../img/hero-img-7.jpg);
+    background-size: cover;
+    background-position: center top;
+    &__left{
+        @include textContainer;
+        .content{
+            width: 380px;
+
+            h1{
+                @include secTitle;
+            }
+            p{
+                @include secPara;
+            }
+            .btn{
+                @include secBtn;
+            }
+
+        }
+        .title-small{
+            color: $light-color;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: block;
+        }
+        span{
+            color: $light-color;
+            margin-top:13px;
+            display: inline-block;
+            
+            &.date{
+                color: $grey-color;
+                margin-right: 10px;
+            }
+            &.author{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:1200px) {
+    .stories {
+        .content {
+            @include secContentForMediumScreen;
+        }
+
+    }
+}
+
+
+
+
+
+
+/* -------------------------------------
+    Page-Story Css Tablet Screens
+------------------------------------- */
+
+@media (max-width:960px) {
+    .stories {
+        &__left {
+            @include textContainerTablet;
+
+            .content {
+                @include secContentTablet;
+
+                h1 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* -------------------------------------
+    Page-Story Css Mobile Screens
+------------------------------------- */
+
+@media (max-width:768px) {
+    .stories {
+        @include secColumnMobile;
+
+        &__left {
+            @include textContainerMobile;
+
+            .content {
+                @include secContentMobile;
+
+                h1 {
+                    @include secTitleMobile;
+                }
+            }
+        }
+    }
+}

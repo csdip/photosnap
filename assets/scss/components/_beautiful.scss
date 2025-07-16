@@ -1,0 +1,108 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Beautiful Css Desktop Screen & Above
+------------------------------------- */
+.beautiful {
+    &__left {
+        @include imgContainer;
+        background-image: url(../img/hero-img-2.jpg)
+    }
+
+    &__right {
+        @include textContainer;
+
+        .content {
+            @include secContent;
+
+            h1 {
+                @include secTitle;
+                color: $dark-color;
+            }
+
+            p {
+                @include secPara;
+            }
+
+            .btn {
+                @include secBtn;
+                @include secBtnDark;
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width:1200px) {
+    .beautiful {
+        .content {
+            @include secContentForMediumScreen;
+        }
+
+    }
+}
+
+
+
+
+
+/* -------------------------------------
+    Beautiful Css Tablet Screens
+------------------------------------- */
+@media (max-width:960px) {
+    .beautiful {
+        &__left {
+            @include imgContainerTablet;
+
+            img {
+                @include secImgTablet;
+            }
+        }
+
+        &__right {
+            @include textContainerTablet;
+
+            .content {
+                @include secContentTablet;
+                padding-left: 0 !important;
+
+                h1 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* -------------------------------------
+    Beautiful Css Mobile Screens
+------------------------------------- */
+@media (max-width:768px) {
+    .beautiful {
+        @include secColumnMobile;
+
+        &__left {
+            @include imgContainerMobile;
+        }
+
+        &__right {
+            @include textContainerMobile;
+
+            .content {
+                @include secContentMobile;
+
+                h1 {
+                    @include secTitleMobile;
+                }
+            }
+        }
+    }
+}

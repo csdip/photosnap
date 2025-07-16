@@ -1,0 +1,181 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Footer Css Desktop Screen & Above
+------------------------------------- */
+.footer {
+    background: $dark-color;
+    padding: 60px 0;
+
+    &__left {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        &--logo {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            margin-bottom: 80px;
+        }
+
+        &--nav-links {
+            grid-column: 2/3;
+            grid-row: 1/3;
+
+            li {
+                &:not(:first-child) {
+                    margin-top: 20px;
+                }
+
+                a {
+                    @include headerNavLinks;
+                    color: $light-color;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        &--social-links {
+            grid-column: 1/2;
+            grid-row: 2/3;
+
+            li {
+                margin-right: 6px;
+
+                a {
+                    transition: all .3s ease;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+
+
+            }
+
+            i {
+                font-size: 24px;
+                font-weight: normal;
+                color: $light-color;
+            }
+        }
+    }
+
+    &__right {
+        .btn {
+            @include secBtn;
+            margin-right: 60px;
+        }
+
+        &--copyright {
+            margin-top: 95px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------
+    Footer Css Tablet Screens
+------------------------------------- */
+@media (max-width:960px) {
+
+    .footer {
+
+        &__left {
+
+            &--logo {
+                margin-bottom: 40px;
+            }
+
+            &--nav-links {
+                grid-column: 1/2;
+                grid-row: 2/3;
+                margin-bottom: 40px;
+
+                ul {
+                    flex-direction: row;
+
+                    li {
+                        margin: 0 20px 0 0 !important;
+                    }
+                }
+            }
+
+            &--social-links {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+/* -------------------------------------
+    Footer Css Mobile Screens
+------------------------------------- */
+
+@media (max-width:768px) {
+
+    .footer {
+
+        &__left {
+            text-align: center;
+
+            &--logo {
+                grid-column: 1/-1;
+                grid-row: 1/2;
+            }
+
+            &--nav-links {
+                grid-column: 1/-1;
+                grid-row: 3/4;
+
+                ul {
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 40px 0;
+
+                    li {
+                        margin: 10px 0 !important;
+                    }
+                }
+            }
+
+            &--social-links {
+                grid-column: 1/-1;
+                grid-row: 2/3;
+                text-align: center;
+
+                ul {
+                    justify-content: center;
+                }
+            }
+        }
+
+        &__right {
+            text-align: center;
+            align-items: center;
+
+            &--copyright {
+                margin-top: 25px;
+            }
+        }
+
+    }
+}

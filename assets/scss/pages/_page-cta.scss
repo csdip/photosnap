@@ -1,0 +1,97 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Page-Cta Css Desktop Screen & Above
+------------------------------------- */
+
+.cta {
+    width: 100%;
+    height: 40vh;
+    background-image: url(../img/hero-img-6.jpg);
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+
+    &__left {
+        @include textContainer;
+
+        &::before {
+            @include gradientBar;
+            height: 100%;
+        }
+
+        .content {
+            width: 426px;
+
+            h2 {
+                @include secTitle;
+                color: $light-color
+            }
+        }
+    }
+
+    &__right {
+        .btn {
+            @include secBtn;
+            margin-right: 60px;
+        }
+    }
+}
+
+
+
+
+/* -------------------------------------
+    Page-Cta Css Tablet Screens
+------------------------------------- */
+
+@media (max-width:960px) {
+    .cta {
+
+        &__left {
+            .content {
+
+                h2 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------
+    Page-Cta Css Mobile Screens
+------------------------------------- */
+
+@media (max-width:768px) {
+    .cta {
+
+        &__left {
+            width: 100%;
+            align-items: center;
+            margin-bottom: 50px;
+            .content {
+                width: 100%;
+
+                h2 {
+                    @include secTitleTablet;
+                    font-size: 36px !important;
+                }
+            }
+        }
+
+        &__right{
+            justify-content: start;
+        }
+
+    }
+}

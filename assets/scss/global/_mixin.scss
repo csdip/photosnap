@@ -1,0 +1,289 @@
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Mixin Css Desktop Screens
+------------------------------------- */
+
+// ======== Header Sec ========
+
+@mixin headerNavLinks {
+    color: $dark-color;
+    font-weight: $semibold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+
+
+// ======== Body Main Sec ========
+
+@mixin textContainer {
+    width: 40%;
+}
+
+@mixin gradientBar {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 300px;
+    background: linear-gradient(#5a77ff, #bc7198, #ffc593);
+    // animation: changing 3s ease infinite;
+}
+
+@mixin gradientBarHorizontal {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #5a77ff, #bc7198, #ffc593);
+    // animation: changing 3s ease infinite;
+}
+
+@mixin imgContainer {
+    width: 60%;
+    height: 70vh;
+    background-image: url(../img/hero-img-1.jpg);
+    background-size: cover;
+    background-position: center top;
+}
+
+@mixin secContent {
+    width: 450px;
+}
+
+@mixin secTitle {
+    font-size: 48px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $light-color;
+}
+
+@mixin secPara {
+    margin: 20px 0 40px 0;
+}
+
+
+@mixin secBtn {
+
+    background: none;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: $light-color;
+        transition: all .3s ease;
+    }
+
+    &::after {
+        content: "";
+        background-image: url(../img/arrow-icon-light.svg);
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        margin-left: 20px;
+        transition: all .3s ease;
+
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    &:hover::after {
+        transform: translateX(10px);
+    }
+
+}
+
+@mixin secBtnDark {
+    color: $dark-color;
+
+    &::after {
+        background-image: url(../img/arrow-icon-dark.svg);
+    }
+
+    &::before {
+        background-color: $dark-color;
+    }
+}
+
+// ======== Story Sec ========
+@mixin storySingle {
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin storyThumbnail {
+    width: 100%;
+
+}
+
+@mixin storyFooter {
+    position: absolute;
+    padding: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, $dark-color, transparent);
+}
+
+@mixin storyFooterTexts {
+    border-bottom: 1px solid #ffffff50;
+    padding: 15px 0;
+
+    .title {
+        font-size: 18px;
+        line-height: 2;
+        color: $light-color;
+    }
+
+    .des {
+        font-size: 13px;
+        color: $light-color;
+    }
+}
+
+@mixin storyFooterLink {
+    @include headerNavLinks;
+    @include secBtn;
+    display: flex;
+    color: $light-color;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        color: $light-color;
+
+        img {
+            margin-right: auto;
+        }
+    }
+
+    &::after {
+        background: none;
+    }
+
+    padding-top: 15px;
+}
+
+
+@mixin secContentForMediumScreen {
+    width: 350px;
+}
+
+
+
+
+/* -------------------------------------
+    Mixin Css Tablet Screens
+------------------------------------- */
+@mixin textContainerTablet {
+    @media (max-width:960px) {
+        width: 65%;
+    }
+}
+
+@mixin imgContainerTablet {
+    @media (max-width:960px) {
+        width: 35%;
+    }
+}
+
+@mixin secContentTablet {
+    @media (max-width:960px) {
+        width: 90%;
+        padding-left: 10px;
+    }
+}
+
+@mixin secTitleTablet {
+    @media (max-width:960px) {
+        font-size: 38px;
+    }
+}
+
+@mixin secImgTablet {
+    @media (max-width:960px) {
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+    }
+}
+
+
+
+// ======== Story Sec ========
+@mixin storySingleTablet {
+    @media (max-width:960px) {
+        width: 50%;
+    }
+}
+
+
+
+
+
+/* -------------------------------------
+    Mixin Css Mobile Screens
+------------------------------------- */
+@mixin secColumnMobile {
+    @media (max-width:768px) {
+        flex-direction: column;
+    }
+}
+
+@mixin textContainerMobile {
+    @media (max-width:768px) {
+        width: 100%;
+        order: 2;
+        padding: 40px 20px;
+    }
+}
+
+@mixin secContentMobile {
+    @media (max-width:768px) {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@mixin imgContainerMobile {
+    @media (max-width:768px) {
+        width: 100%;
+        height: 300px;
+        order: 1;
+    }
+}
+
+@mixin secTitleMobile {
+    @media (max-width:768px) {
+        font-size: 36px;
+    }
+}
+
+
+// ======== Story Sec ========
+@mixin storySingleMobile {
+    @media (max-width:768px) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,97 @@
+
+
+// =============== Google Font Links ===============
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/* -------------------------------------
+             Theme Fonts CSS
+------------------------------------- */
+
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$black: 900;
+
+
+
+
+
+
+/* -------------------------------------
+            Theme Colors CSS
+------------------------------------- */
+
+$dark-color: #000000;
+$light-color: #ffffff;
+$grey-color: #b4b4b4;
+
+
+
+
+
+ 
+.preloader {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+  }
+
+  .loader-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    z-index: 88;
+  }
+
+
+  @keyframes l5 {
+      0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+      33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+      66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+      100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+  }
+
+
+  .container-hidden{
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+@keyframes changing {
+    0%{
+        background: linear-gradient(#c6d404, #ff6600, #b700ff, #4400ff);
+    }
+    25%{
+        background: linear-gradient(#4400ff, #ff6600, #b700ff, #c6d404);
+    }
+    50%{
+        background: linear-gradient(#c6d404, #ff6600, #b700ff, #4400ff);
+    }
+    100%{
+        background: linear-gradient(#ff6600, #c6d404, #4400ff, #b700ff);
+    }
+}

@@ -1,0 +1,71 @@
+@use "../global/" as *;
+
+/* -------------------------------------
+    Story Css Desktop Screen & Above
+------------------------------------- */
+.story {
+    &__single {
+        @include storySingle;
+    }
+
+    &__thumbnail {
+        @include storyThumbnail;
+    }
+    
+    &__footer {
+        @include storyFooter;
+        
+        
+        &--texts {
+            @include storyFooterTexts;
+        }
+        
+        &--link {
+            padding-top: 15px;
+
+            a{
+                @include storyFooterLink;
+                padding: 0;
+
+                &::after{
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+
+
+/* -------------------------------------
+    Story Css Tablet Screens
+------------------------------------- */
+@media (max-width:960px){
+    .story{
+        &__single{
+            @include storySingleTablet;
+        }
+        
+    }
+}
+
+
+
+
+
+
+/* -------------------------------------
+    Story Css Mobile Screens
+------------------------------------- */
+@media (max-width:768px){
+    .story{
+        &__single{
+            @include storySingleMobile;
+        }
+        
+    }
+}

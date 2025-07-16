@@ -1,0 +1,126 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Design Css Desktop Screen & Above
+------------------------------------- */
+
+.design {
+    background-color: $light-color;
+
+    &__left {
+        @include textContainer;
+
+        .content {
+            @include secContent;
+
+            h1 {
+                @include secTitle;
+                color: $dark-color;
+            }
+
+            p {
+                @include secPara;
+            }
+
+            .btn {
+                @include secBtn;
+                @include secBtnDark;
+                
+            }
+        }
+
+    }
+
+    &__right {
+        @include imgContainer;
+        background-image: url(../img/hero-img-3.jpg);
+    }
+
+}
+
+
+
+
+@media (max-width:1200px) {
+    .design {
+        .content {
+            @include secContentForMediumScreen;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------
+    Design Css Tablet Screens
+------------------------------------- */
+@media (max-width:960px) {
+    .design {
+        &__left {
+            @include textContainerTablet;
+
+            .content {
+                @include secContentTablet;
+
+                h1 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerTablet;
+
+            img {
+                @include secImgTablet;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* -------------------------------------
+    Design Css Mobile Screens
+------------------------------------- */
+@media (max-width:768px) {
+    .design {
+        @include secColumnMobile;
+
+        &__left {
+            @include textContainerMobile;
+
+            &::before {
+                top: -57px;
+                left: 80px;
+                transform: rotate(90deg);
+                height: 120px;
+            }
+
+            .content {
+                @include secContentMobile;
+
+                h1 {
+                    @include secTitleMobile;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerMobile;
+        }
+    }
+}

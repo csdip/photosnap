@@ -1,0 +1,171 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Header Css Desktop Screen & Above
+------------------------------------- */
+
+.header {
+    padding: 40px 0;
+    position: relative;
+
+    &__menu {
+        li {
+            margin: 0 20px;
+
+            a {
+                @include headerNavLinks;
+
+            }
+
+            &:hover a {
+                opacity: 0.6;
+            }
+
+
+        }
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        span {
+            position: relative;
+            width: 40px;
+            height: 2px;
+            top: 18px;
+            display: block;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 2px;
+                top: 6px;
+                background-color: $dark-color;
+                transition: all .3s ease;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 2px;
+                top: -6px;
+                background-color: $dark-color;
+                transition: all .3s ease;
+            }
+        }
+
+        &.active {
+            span {
+                &::before {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                &::after {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* -------------------------------------
+    Header Css Tablet Screens
+------------------------------------- */
+
+
+@media (max-width:960px){
+    .header {
+        li {
+            margin: 0 15px;
+        }
+    }
+}
+
+
+
+
+
+
+/* -------------------------------------
+    Header Css Mobile Screens
+------------------------------------- */
+@media (max-width:768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header {
+        padding: 20px 0 !important;
+        border-bottom: 1px solid;
+
+        &__logo {
+
+            img {
+                width: 140px;
+            }
+        }
+
+        .nav-btn {
+            display: block;
+        }
+
+        &__menu {
+            position: absolute;
+            padding: 40px 40px 80px;
+            top: 100px;
+            left: 0;
+            right: 0;
+            background-color: $light-color;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .4s ease-in-out;
+            z-index: 99;
+            &.active {
+                top: 81px;
+                opacity: 1;
+                visibility: visible;
+            }
+            ul {
+                    flex-direction: column;
+
+                    li {
+                        margin: 15px 0;
+                        width: 100%;
+                        text-align: center;
+
+                        &:last-child {
+                            border-bottom: 1px solid #00000020;
+                            padding-bottom: 30px;
+                            margin-bottom: 30px;
+                        }
+
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+        }
+
+        &__btn {
+            width: 100%;
+            &.d-none {
+                display: block !important;
+                margin: 0 auto;
+            }
+
+            &.desktop-btn {
+                display: none;
+            }
+        }
+    }
+}

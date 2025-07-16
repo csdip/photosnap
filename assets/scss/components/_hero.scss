@@ -1,0 +1,126 @@
+@use "../global/" as *;
+@use "../utils/" as *;
+
+/* -------------------------------------
+    Hero Css Desktop Screen & Above
+------------------------------------- */
+.hero {
+    background-color: $dark-color;
+
+    &__left {
+        @include textContainer;
+        position: relative;
+
+        &::before {
+            @include gradientBar;
+        }
+
+        .content {
+            @include secContent;
+
+            h1 {
+                @include secTitle;
+            }
+
+            p {
+                @include secPara;
+            }
+
+            .btn {
+                @include secBtn;
+            }
+        }
+
+    }
+
+    &__right {
+        @include imgContainer;
+    }
+
+}
+
+
+
+
+@media (max-width:1200px) {
+    .hero {
+        .content {
+            @include secContentForMediumScreen;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+/* -------------------------------------
+    Hero Css Tablet Screens
+------------------------------------- */
+
+
+@media (max-width:960px) {
+    .hero {
+        &__left {
+            @include textContainerTablet;
+
+            .content {
+                @include secContentTablet;
+
+                h1 {
+                    @include secTitleTablet;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerTablet;
+
+            img {
+                @include secImgTablet;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/* -------------------------------------
+    Hero Css Mobile Screens
+------------------------------------- */
+
+@media (max-width:768px) {
+    .hero {
+        @include secColumnMobile;
+
+        &__left {
+            @include textContainerMobile;
+
+            &::before {
+                top: -57px;
+                left: 80px;
+                transform: rotate(90deg);
+                height: 120px;
+            }
+
+            .content {
+                @include secContentMobile;
+
+                h1 {
+                    @include secTitleMobile;
+                }
+            }
+        }
+
+        &__right {
+            @include imgContainerMobile;
+        }
+    }
+}
